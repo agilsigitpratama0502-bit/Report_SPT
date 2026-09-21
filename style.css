@@ -448,7 +448,7 @@ body {
 ========================================================= */
 
 .reject-table th {
-  padding: 2px 4px;
+  padding: 8px 8px;
 
   border: 1px solid #777;
 
@@ -456,7 +456,10 @@ body {
 
   white-space: nowrap;
 
-  line-height: 1;
+  line-height: 1.2;
+
+  font-size: 16px;
+  font-weight: bold;
 }
 
 
@@ -465,7 +468,7 @@ body {
 ========================================================= */
 
 .reject-table td {
-  padding: 2px 4px;
+  padding: 8px 8px;
 
   border: 1px solid #999;
 
@@ -473,7 +476,9 @@ body {
 
   white-space: nowrap;
 
-  line-height: 1;
+  line-height: 1.2;
+
+  font-size: 16px;
 }
 
 
