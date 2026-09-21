@@ -1,0 +1,608 @@
+/* =========================================================
+   RESET / DASAR
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+}
+
+body {
+  background: #f5f5f5;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================================================
+   DASHBOARD UTAMA
+========================================================= */
+
+.dashboard {
+  display: flex;
+
+  width: 100%;
+  height: 100vh;
+
+  margin: 0;
+  padding: 0;
+
+  background: #f5f5f5;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   VIEW — 30%
+========================================================= */
+
+.view-panel {
+  position: relative;
+
+  width: 30%;
+  height: 100%;
+
+  flex: 0 0 30%;
+
+  background: #ffffff;
+
+  overflow: hidden;
+
+  border-right: 2px solid #d9d9d9;
+}
+
+
+/* =========================================================
+   LIST — 70%
+========================================================= */
+
+.list-panel {
+  position: relative;
+
+  width: 70%;
+  height: 100%;
+
+  flex: 0 0 70%;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   VIEW — LOADING
+========================================================= */
+
+#loading {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #ffffff;
+
+  color: #333333;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  z-index: 9999;
+}
+
+
+/* =========================================================
+   VIEW — ERROR
+========================================================= */
+
+#error {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+  right: 20px;
+
+  margin: 0;
+  padding: 15px;
+
+  background: #ffe5e5;
+
+  color: #b00000;
+
+  border: 1px solid #ffb3b3;
+
+  border-radius: 6px;
+
+  font-family: Arial, sans-serif;
+
+  z-index: 10000;
+}
+
+
+/* =========================================================
+   VIEW — SHEET CONTAINER
+========================================================= */
+
+#sheet-container {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  background: #f5f5f5;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   VIEW — SHEET
+========================================================= */
+
+.sheet {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  display: grid;
+
+  margin: 0;
+  padding: 0;
+
+  background: #ffffff;
+
+  transform-origin: top left;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   VIEW — CELL
+========================================================= */
+
+.cell {
+  position: relative;
+
+  min-width: 0;
+  min-height: 0;
+
+  padding: 2px 4px;
+
+  overflow: hidden;
+
+  white-space: pre-wrap;
+
+  word-break: break-word;
+
+  border: 0;
+
+  background: #ffffff;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  color: #000000;
+
+  display: flex;
+
+  align-items: center;
+}
+
+
+/* =========================================================
+   VIEW — CELL YANG MEMILIKI ISI
+========================================================= */
+
+.cell.has-value {
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   VIEW — TEXT DALAM CELL
+========================================================= */
+
+.cell-text {
+  display: block;
+
+  width: 100%;
+
+  min-width: 0;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   VIEW — MERGED CELL
+========================================================= */
+
+.cell.merged {
+  z-index: 2;
+}
+
+
+/* =========================================================
+   LIST — CONTAINER
+========================================================= */
+
+#list-container {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  background: #3b3b3b;
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   LIST — HEADER
+========================================================= */
+
+.list-header {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  height: 90px;
+  padding: 10px 18px;
+  background: #154d78;
+  border: 1px solid #bfbfbf;
+  color: white;
+}
+
+
+/* =========================================================
+   LIST — TITLE AREA
+========================================================= */
+
+.list-title-area {
+  position: absolute;
+
+  left: 18px;
+  top: 14px;
+}
+
+
+.list-title {
+  font-size: 21px;
+  font-weight: bold;
+  line-height: 1.1;
+  color: #f5c928;
+}
+
+
+.list-count {
+  margin-top: 7px;
+
+  font-size: 16px;
+
+  color: white;
+}
+
+
+/* =========================================================
+   LIST — TANGGAL
+========================================================= */
+
+.list-date-area {
+  position: absolute;
+
+  right: 18px;
+  top: 14px;
+
+  text-align: right;
+}
+
+
+.list-date {
+  font-size: 16px;
+
+  font-weight: bold;
+
+  color: white;
+}
+
+
+.list-clock {
+  margin-top: 4px;
+  font-family: "Courier New", monospace;
+  font-size: 19px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #f5c928;
+}
+
+
+/* =========================================================
+   LIST — REFRESH
+========================================================= */
+
+.refresh-button {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+  transform: translateX(-50%);
+  height: 30px;
+  padding: 0 15px;
+  border: 1px solid #f5c928;
+  background: #154d78;
+  color: #f5c928;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.refresh-button:hover {
+  background: #1c5d91;
+}
+
+
+.refresh-button:hover {
+  background: #1c5d91;
+}
+
+
+/* =========================================================
+   LIST — AREA TABLE
+========================================================= */
+
+.list-table-wrapper {
+  position: absolute;
+
+  left: 10px;
+  right: 10px;
+
+  top: 110px;
+  bottom: 10px;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: white;
+
+  border: 1px solid #777;
+}
+
+
+/* =========================================================
+   LIST — SCALE BOX
+========================================================= */
+
+.list-table-scale {
+  position: relative;
+
+  display: block;
+
+  transform-origin: top left;
+}
+
+
+/* =========================================================
+   LIST — TABLE
+========================================================= */
+
+.reject-table {
+  display: table;
+
+  width: max-content;
+
+  min-width: max-content;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  margin: 0;
+  padding: 0;
+
+  background: white;
+}
+
+
+/* =========================================================
+   LIST — COL
+========================================================= */
+
+.reject-table col {
+  padding: 0;
+  margin: 0;
+}
+
+
+/* =========================================================
+   LIST — HEADER CELL
+========================================================= */
+
+.reject-table th {
+  padding: 2px 4px;
+
+  border: 1px solid #777;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   LIST — BODY CELL
+========================================================= */
+
+.reject-table td {
+  padding: 2px 4px;
+
+  border: 1px solid #999;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   LIST — LOADING
+========================================================= */
+
+.list-loading {
+  position: absolute;
+
+  inset: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: white;
+
+  font-size: 20px;
+
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   LIST — ERROR
+========================================================= */
+
+.list-error {
+  position: absolute;
+
+  top: 20px;
+  left: 20px;
+  right: 20px;
+
+  padding: 20px;
+
+  background: #ffe5e5;
+
+  border: 1px solid #ff0000;
+
+  color: #b00000;
+
+  font-weight: bold;
+}
+
+
+.error-detail {
+  margin-top: 8px;
+
+  font-weight: normal;
+}
+
+
+/* =========================================================
+   LIST — SCROLLBAR
+========================================================= */
+
+.list-table-wrapper::-webkit-scrollbar {
+  width: 8px;
+}
+
+
+.list-table-wrapper::-webkit-scrollbar-thumb {
+  background: #999;
+}
+
+
+.list-table-wrapper::-webkit-scrollbar-track {
+  background: #ddd;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (min-width: 1400px) {
+
+  .list-title {
+    font-size: 25px;
+  }
+
+  .list-count {
+    font-size: 16px;
+  }
+
+}
+
+
+@media (max-width: 900px) {
+
+  .view-panel {
+    width: 30%;
+    flex-basis: 30%;
+  }
+
+  .list-panel {
+    width: 70%;
+    flex-basis: 70%;
+  }
+
+  .cell {
+    font-size: 9px;
+  }
+
+  .list-header {
+    height: 100px;
+  }
+
+  .list-table-wrapper {
+    top: 120px;
+  }
+
+  .list-title {
+    font-size: 20px;
+  }
+
+  .list-count {
+    font-size: 13px;
+  }
+
+  .list-date {
+    font-size: 13px;
+  }
+
+  .list-clock {
+    font-size: 18px;
+  }
+
+}
